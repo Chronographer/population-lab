@@ -11,12 +11,12 @@ only valid when the decay constant is equal to zero.
 import matplotlib.pyplot as plt
 import math
 
-initialPopulation = 10
+initialPopulation = 1.0
 initialTime = 0.0
-maxTime = 10.0
+maxTime = 2.5
 timeStep = 0.01
-growthConstant = 0.1
-decayConstant = 0.0
+growthConstant = 5.0
+decayConstant = 0.05
 
 currentPopulation = initialPopulation
 currentTime = initialTime
@@ -38,10 +38,10 @@ while currentTime <= maxTime:
     timeList.append(currentTime)
     print("current population is: " + str(currentPopulation) + " currentTIme is: " + str(currentTime))
 
-plt.plot(timeList, populationList, label="computational")
-plt.plot(timeList, analyticalPopulationList, label="analytical")
+plt.plot(timeList, populationList, label="Initial population: " + str(initialPopulation) + "\ngrowth constant: " + str(growthConstant) + "\ndecay constant: " + str(decayConstant) + "\ntime step: " + str(timeStep))  # this automatically populates the legend with the parameters used to create the plot
+# plt.plot(timeList, analyticalPopulationList, label="analytical")  # uncomment this to plot the analytical solution
 plt.legend()
-plt.suptitle("Comparison of computational and analytical methods\nin unrestrained population growth")
+plt.suptitle("Computational model of population growth\nwith small decay constant")
 plt.xlabel("Time")
 plt.ylabel("Population")
 plt.grid()
