@@ -46,5 +46,3 @@ plt.xlabel("Time")
 plt.ylabel("Population")
 plt.grid()
 plt.show()
-
-
